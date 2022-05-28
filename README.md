@@ -53,7 +53,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## addresss テーブル
+## addresses テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
