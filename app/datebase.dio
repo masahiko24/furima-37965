@@ -28,10 +28,10 @@
                         <mxPoint x="160" y="370" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="156" value="address" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
+                <mxCell id="156" value="addresss" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="520" y="290" width="410" height="310" as="geometry"/>
                 </mxCell>
-                <mxCell id="157" value=":postal_code string , not null&#10;&#10;:delivery_area_id  integer, not null&#10;&#10;:city string, not null&#10;&#10;:house_number string, not null&#10;&#10;:building_name string, not null&#10;&#10;:phone_number string, not null&#10;&#10;:user references, not null&#10;&#10;:buy references, not null" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=15;" parent="156" vertex="1">
+                <mxCell id="157" value=":postal_code string , not null&#10;&#10;:delivery_area_id  integer, not null&#10;&#10;:city string, not null&#10;&#10;:house_number string, not null&#10;&#10;:building_name string&#10;&#10;:phone_number string, not null&#10;&#10;:buy references, not null" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=15;" parent="156" vertex="1">
                     <mxGeometry y="26" width="410" height="284" as="geometry"/>
                 </mxCell>
                 <mxCell id="160" value="" style="endArrow=ERone;html=1;rounded=0;fontSize=12;strokeColor=default;exitX=0.5;exitY=1.009;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=ERone;startFill=0;endFill=0;" parent="1" source="118" edge="1">
@@ -43,7 +43,7 @@
                 <mxCell id="113" value="items" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
                     <mxGeometry x="40" y="390" width="320" height="320" as="geometry"/>
                 </mxCell>
-                <mxCell id="114" value=":brandname string, not null&#10;&#10;:description string, not null&#10;&#10;:details_category_id integer, not null&#10;&#10;:detaills_condition_id integer, not null&#10;&#10;:delivery_charges_id integer, not null&#10;&#10;:delivery_area_id integer, not null&#10;&#10;:delivery_number_of_date_id integer, not null&#10;&#10;:price_id integer, not null&#10;&#10;:user references, not null" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=15;" parent="113" vertex="1">
+                <mxCell id="114" value=":brandname string, not null&#10;&#10;:description string, not null&#10;&#10;:details_category_id integer, not null&#10;&#10;:detaills_condition_id integer, not null&#10;&#10;:delivery_charge_id integer, not null&#10;&#10;:delivery_area_id integer, not null&#10;&#10;:delivery_number_of_date_id integer, not null&#10;&#10;:price integer, not null&#10;&#10;:user references, not null" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=15;" parent="113" vertex="1">
                     <mxGeometry y="26" width="320" height="294" as="geometry"/>
                 </mxCell>
                 <mxCell id="161" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=1.003;exitY=0.299;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.007;entryY=0.569;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="114" target="118">

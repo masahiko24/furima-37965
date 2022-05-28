@@ -29,10 +29,10 @@
 | description                 | text       | null: false                   |
 | details_category_id         | integer    | null: false                   |
 | details_condition_id        | integer    | null: false                   |
-| delivery_charges_id         | integer    | null: false                   |
+| delivery_charge_id         | integer    | null: false                   |
 | delivery_area_id            | integer    | null: false                   |
 | delivery_number_of_date_id  | integer    | null: false                   |
-| price_id                    | integer    | null: false                   |
+| price                       | integer    | null: false                   |
 | user                        | references | null: false foreign_key: true |
 
 ### Association
@@ -53,7 +53,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## address テーブル
+## addresss テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -61,9 +61,8 @@
 | delivery_area_id | integer    | null: false                    |
 | city             | string     | null: false                    |
 | house_number     | string     | null: false                    |
-| building_name    | string     | null: false                    |
+| building_name    | string     |                     |
 | phone_number     | string     | null: false                    |
-| user             | references | null: false, foreign_key: true |
 | buy              | references | null: false, foreign_key: true |
 
 
