@@ -7,10 +7,10 @@ RSpec.describe User, type: :model do
   describe '新規登録/ユーザー情報' do
 
     context '新規登録が上手く行く時' do
-      it "nicknameとemail、passwordとpassword_confiramation,last_name,first_name,last_name_kana,first_name_kana,birthdayが存在すれば登録できる" do
+      it "nicknameとemail、passwordとpassword_confiramation,last_name,first_name,last_name_reading,first_name_reading,birthdayが存在すれば登録できる" do
         expect(@user).to be_valid
       end
-
+      context '新規登録が上手く行かないとき' do
     it 'ニックネームが必須であること。' do
       @user.nickname = ''
       @user.valid?
@@ -51,11 +51,25 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
     end
 
-    it 'パスワードは、半角英数字混合での入力が必須であること' do
+    it 'パスワードは、半角英語のみでは登録できない' do
+      @user.password = 'AAAAAAA'
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
+    end
+
+    it 'パスワードは、半角数字のみでは登録できない' do
       @user.password = 'aaaaaa'
       @user.valid?
       expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
     end
+
+
+    it 'パスワードは、全角では登録できないこと' do
+      @user.password = 'aaaaaa'
+      @user.valid?
+      expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
+    end
+    
 
     it 'パスワードとパスワード（確認）は、値の一致が必須であること。' do
       @user.password = '123456'
@@ -64,30 +78,12 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
     end
   end
-  end
+end
+  
 
   describe '新規登録/本人情報確認' do
 
-    context '新規登録が上手く行く時' do
-      it "family_nameが全角文字であれば登録できる" do
-        @user.last_name = "田中"
-        expect(@user).to be_valid
-      end
-
-      it "first_nameが全角文字であれば登録できる" do
-        @user.first_name = "太郎"
-        expect(@user).to be_valid
-      end
-
-      it "family_name_kanaが全角カナであれば登録できる" do
-        @user.last_name_reading = "タナカ"
-        expect(@user).to be_valid
-      end
-      it "first_name_kanaが全角カナであれば登録できる" do
-        @user.first_name_reading = "ハジメ"
-        expect(@user).to be_valid
-      end
-
+    context '新規登録が上手く行かないとき' do
     it 'お名前(全角)は、名字がそれぞれ必須であること。' do
       @user.last_name = ''
       @user.valid?
@@ -130,6 +126,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include "Birthday can't be blank"
     end
   end
+end
 end
 
 end
