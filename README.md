@@ -29,7 +29,7 @@
 | description                 | text       | null: false                   |
 | details_category_id         | integer    | null: false                   |
 | details_condition_id        | integer    | null: false                   |
-| delivery_charge_id         | integer    | null: false                   |
+| delivery_charge_id          | integer    | null: false                   |
 | delivery_area_id            | integer    | null: false                   |
 | delivery_number_of_date_id  | integer    | null: false                   |
 | price                       | integer    | null: false                   |
