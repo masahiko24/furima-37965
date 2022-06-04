@@ -67,13 +67,13 @@ end
   it '価格は、¥300~¥9,999,999の間のみ保存可能であること。' do
   @item.price = '100'
   @item.valid?
-  expect(@item.errors.full_messages).to include "Price is invalid"
+  expect(@item.errors.full_messages).to include "Price is out of setting range"
 end
 
   it '価格は半角数値のみ保存可能であること。' do
   @item.price = '１００００'
   @item.valid?
-  expect(@item.errors.full_messages).to include "Price is invalid"
+  expect(@item.errors.full_messages).to include "Price is invalid. Input half-width characters"
 end
 end
 end
