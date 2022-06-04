@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :delivery_area_id,         null: false
       t.integer :delivery_number_of_date_id,         null: false
       t.integer :price ,         null: false
-      t.references :user, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
 
 
@@ -17,3 +17,4 @@ class CreateItems < ActiveRecord::Migration[6.0]
     end
   end
 end
+ 
