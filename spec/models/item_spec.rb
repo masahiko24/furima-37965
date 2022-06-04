@@ -71,9 +71,9 @@ end
 end
 
   it '価格は半角数値のみ保存可能であること。' do
-  @item.price = ''
+  @item.price = '１００００'
   @item.valid?
-  expect(@item.errors.full_messages).to include "Price can't be blank"
+  expect(@item.errors.full_messages).to include "Price is invalid"
 end
 end
 end
