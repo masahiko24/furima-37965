@@ -1,15 +1,21 @@
 FactoryBot.define do
   factory :item do
-    image                     {'IMG-4352.jpg'}
-    brandname                 {'ut'}
-    description               {'nice'}
-    details_category          {'メンズ'}
-    details_condition         {'新品'}
-    delivery_charge           {'着払い'}
-    delivery_area             {'福岡県'}
-    delivery_number_of_date   {'1〜2日で発送'}
-    price                     {'100'}
-    price_is_invalid          {}
-    
+    image                     { 'IMG-4352.jpg' }
+    brandname                 { 'ut' }
+    description               { 'nice' }
+    details_category_id          {1}
+    details_condition_id         {1}
+    delivery_charge_id           {1}
+    delivery_area_id             {1}
+    delivery_number_of_date_id   {1}
+    price                     { '500' }
+
+    association :user
+
+
+    after(:build) do |item|
+      item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    end
+
   end
 end

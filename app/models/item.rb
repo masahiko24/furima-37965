@@ -4,12 +4,15 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  belongs_to :details_category
-  belongs_to :details_condition
-  belongs_to :delivery_charge
-  belongs_to :delivery_area
-  belongs_to :delivery_number_of_date
+  
 
+  belongs_to_active_hash :details_category
+  belongs_to_active_hash :details_condition
+  belongs_to_active_hash :delivery_charge
+  belongs_to_active_hash :delivery_area
+  belongs_to_active_hash :delivery_number_of_date
+
+  validates :image, presence: true
   validates :brandname, presence: true
   validates :description, presence: true
   validates :details_category_id, numericality: { other_than: 0, message: "can't be blank" }
@@ -17,6 +20,8 @@ class Item < ApplicationRecord
   validates :delivery_charge_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :delivery_area_id, numericality: { other_than: 0, message: "can't be blank" }
   validates :delivery_number_of_date_id, numericality: { other_than: 0, message: "can't be blank" }
-  validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is invalid"}
+  validates :price, presence: true,
+                    numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'is invalid' }
 
+                    
 end

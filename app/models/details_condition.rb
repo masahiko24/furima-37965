@@ -1,5 +1,4 @@
 class DetailsCondition < ActiveHash::Base
-  
   self.data = [
     { id: 0, name: '---' },
     { id: 1, name: '新品・未使用' },
@@ -9,7 +8,6 @@ class DetailsCondition < ActiveHash::Base
     { id: 5, name: '傷や汚れあり' },
     { id: 6, name: '全体的に状態が悪い' }
   ]
-  include ActiveHash::Associations 
+  include ActiveHash::Associations
   has_many :items
-
-  end
+end
