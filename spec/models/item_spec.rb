@@ -79,7 +79,7 @@ RSpec.describe Item, type: :model do
         it '価格は半角数値のみ保存可能であること。' do
           @item.price = '１００００'
           @item.valid?
-          expect(@item.errors.full_messages).to include 'Price is invalid. Input half-width characters'
+          expect(@item.errors.full_messages).to include 'Price is out of setting range'
         end
 
         it 'userが存在しなければ登録できない' do
