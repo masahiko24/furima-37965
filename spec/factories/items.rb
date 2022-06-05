@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :item do
-    image                     { 'IMG-4352.jpg' }
     brandname                 { 'ut' }
     description               { 'nice' }
     details_category_id          {1}
@@ -8,8 +7,8 @@ FactoryBot.define do
     delivery_charge_id           {1}
     delivery_area_id             {1}
     delivery_number_of_date_id   {1}
-    price                     { '500' }
-
+    price                     { '1000' }    
+    user_id                      {1}
     association :user
 
 

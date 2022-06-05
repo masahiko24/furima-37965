@@ -4,8 +4,6 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
 
-  
-
   belongs_to_active_hash :details_category
   belongs_to_active_hash :details_condition
   belongs_to_active_hash :delivery_charge
@@ -23,5 +21,7 @@ class Item < ApplicationRecord
   validates :price, presence: true,
                     numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: "is out of setting range" }
   validates :price, numericality: { with: /\A[0-9]+\z/, message: "is invalid. Input half-width characters"}
- 
+  validates :user, presence: true
+
+
 end

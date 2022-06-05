@@ -9,5 +9,6 @@ FactoryBot.define do
     first_name_reading    { 'ハジメ' }
     last_name_reading     { 'タナカ' }
     birthday              { Faker::Date.between(from: '2022-05-1', to: '2022-05-31') }
+
   end
 end
