@@ -29,31 +29,31 @@ RSpec.describe Item, type: :model do
         end
 
         it 'カテゴリーの情報が必須であること。' do
-          @item.details_category_id = '---'
+          @item.details_category_id = '0'
           @item.valid?
           expect(@item.errors.full_messages).to include "Details category can't be blank"
         end
 
         it '商品の状態の情報が必須であること。' do
-          @item.details_condition_id = '---'
+          @item.details_condition_id = '0'
           @item.valid?
           expect(@item.errors.full_messages).to include "Details condition can't be blank"
         end
 
         it '配送料の負担の情報が必須であること。' do
-          @item.delivery_charge_id = '---'
+          @item.delivery_charge_id = '0'
           @item.valid?
           expect(@item.errors.full_messages).to include "Delivery charge can't be blank"
         end
 
         it '発送元の地域の情報が必須であること。' do
-          @item.delivery_area_id = '---'
+          @item.delivery_area_id = '0'
           @item.valid?
           expect(@item.errors.full_messages).to include "Delivery area can't be blank"
         end
 
         it '発送までの日数の情報が必須であること。' do
-          @item.delivery_number_of_date_id = '---'
+          @item.delivery_number_of_date_id = '0'
           @item.valid?
           expect(@item.errors.full_messages).to include "Delivery number of date can't be blank"
         end
@@ -85,7 +85,7 @@ RSpec.describe Item, type: :model do
         it 'userが存在しなければ登録できない' do
           @item.user = nil
           @item.valid?
-          expect(@item.errors.full_messages).to include "User can't be blank"
+          expect(@item.errors.full_messages).to include "User must exist"
         end
       end
     end
